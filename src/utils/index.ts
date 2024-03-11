@@ -47,23 +47,22 @@ export const formatDate = (date: Date): string =>
         year: "2-digit",
     });
 
-/**
- *
- */
 /*
 interface CountBy {
     [key: string]: number;
 }
+*/
 
-export const countBy = (arr: Array<string | number>): number => {
-    return arr.reduce((acc: CountBy, item) => {
-        if (acc[item] !== 0) {
+export type List = Record<string, number>;
+
+export const countBy = (array: Array<string | number>): Record<string, number> => {
+    return array.reduce((acc: List, item) => {
+        if (acc[item] !== undefined) {
             acc[item] += 1;
         } else {
-            acc[item] += 1;
+            acc[item] = 1;
         }
 
         return acc;
     }, {});
 };
-*/

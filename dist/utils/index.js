@@ -25,4 +25,15 @@ export const formatDate = (date) => date.toLocaleDateString("pt-BR", {
     month: "2-digit",
     year: "2-digit",
 });
+export const countBy = (array) => {
+    return array.reduce((acc, item) => {
+        if (acc[item] !== undefined) {
+            acc[item] += 1;
+        }
+        else {
+            acc[item] = 1;
+        }
+        return acc;
+    }, {});
+};
 //# sourceMappingURL=index.js.map
